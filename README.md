@@ -1,5 +1,7 @@
 # BRUVNet (Baited Remote Underwater Video Net)
 
+![bruvnet](https://github.com/ajansenn/BRUVNet/blob/master/BRUVNet%20Image.png)
+
 BRUVNet is a platform which hosts and shares labelled images of fish used for computer vision and deep learning.   
 
 It aims to consolidate labelled fish datasets into one gold standard, with associated metadata, allowing users to subset and query easily. This will enable scientists, environmental managers and academics to research and develop their own custom models for fish species identification.
