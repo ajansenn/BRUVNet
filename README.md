@@ -31,7 +31,7 @@ Instance segmentation requires images of fish to be labelled using polylines. We
 ![annotations](https://github.com/ajansenn/BRUVNet/blob/master/VoTT%20Fish%20Annotations.PNG)
 
 
-### The taxonomy of labelling
+## The taxonomy of labelling
 
 A consistent naming convention is applied to all fish across freshwater and marine systems. Scientific names, in latin, are always used with a genus in capital letters followed by a species name (e.g. Amniataba percoides). If the species name is unknown, and there are multiple potential species, the abbreviated spp. is used (e.g. Amniataba spp.). If there is only one species and it is unnamed, the abbreviated sp. is used (e.g. Amniataba sp.).
 
@@ -39,7 +39,11 @@ The taxonomy tree below highlights an example of freshwater species currently in
 
 ![classification tree](https://github.com/ajansenn/BRUVNet/blob/master/Classification%20Tree1.jpg)
 
-#### AI Models
+## Label format
+
+Annotations and labels are in [COCO](https://cocodataset.org/#home) format. We provide a jupyter notebook in the notebooks folder, VOTT-COCO, to convert images labelled in VoTT to COCO format. 
+
+## AI Models
 
 BRUVNet currently uses Azure Machine Learning service to train instance segmentation models with [Detectron2](https://github.com/facebookresearch/detectron2). 
 
