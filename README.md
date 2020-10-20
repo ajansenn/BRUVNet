@@ -1,5 +1,7 @@
 # BRUVNet (Baited Remote Underwater Video Net)
 
+STOP! Watch and Star this repository to stay up to date on its progress. Create issues for additional features you'd like to see go into the BRUVNet pipeline or problems that need to be solved for fish AI models. 
+
 ![bruvnet](https://github.com/ajansenn/BRUVNet/blob/master/BRUVNet%20Image.png)
 
 BRUVNet, a collaboration between [Microsoft](https://www.microsoft.com/en-us/ai/ai-for-earth) and the [Supervising Scientist](http://environment.gov.au/science/supervising-scientist), which is an open-sourced dataset of freshwater and marine fish images used for fisheries monitoring and research. Labelled images and models can be used for object detection, image segmentation and computer vision objectives, automating fish identification and quantification processes.
@@ -84,13 +86,35 @@ ipython kernel install --user
 
 Create a free [Microsoft Azure account](https://azure.microsoft.com/en-au/free/search/?&OCID=AID2100005_SEM_XxwBIQAABlbEr6x_:20200826223928:s&msclkid=2994d79425221578b0a388d30fcfa145&ef_id=XxwBIQAABlbEr6x_:20200826223928:s&dclid=CjgKEAjwkJj6BRDA4aKNxJ-T7AgSJABGqdLcustSw9LZ5QLQ1dADrXJugi-_KX713AHwKyZ1fyX9zvD_BwE) to gain access to all the tooling required.  
 
+## Azure Machine Learning Service
+
+```
+Download or clone this repository
+Launch Azure Studio
+Create a new datastore that connects to an Azure Blob with images and labels
+Create new dataset from datastore
+Create new compute instance (GPU Standard NC6 with 56GB Ram is a good start)
+In Notebooks, upload this entire repository folder
+Open aml_detectron2_bruvcoco_local from the notebooks folder
+Follow steps and adjust parameters to suit your needs
+Train model
+```
+
 ## Contribute! 
 
 If you already have a labelled dataset of fish images BRUVNet encourages collaboration and integration of your data into the gold standard. Your contributions will further development of fish AI projects and ensure it is stored safely and securely through time. 
 
-## Contact
+## Team
 
 Steve van Bodegraven (Microsoft)
 
 Andrew Jansen (Supervising Scientist)
+
+Kris Bock (Microsoft)
+
+Varma Gadhiraju (Microsoft)
+
+Valeriia Savenko (Microsoft)
+
+Andrew Esparon (Supervising Scientist)
 
