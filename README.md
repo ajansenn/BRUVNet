@@ -4,11 +4,11 @@ STOP! Watch and Star this repository to stay up to date on its progress. Create 
 
 ![bruvnet](https://github.com/ajansenn/BRUVNet/blob/master/BRUVNet%20Image.png)
 
-BRUVNet, a collaboration between [Microsoft](https://www.microsoft.com/en-us/ai/ai-for-earth) and the [Supervising Scientist](http://environment.gov.au/science/supervising-scientist), which is an open-sourced dataset of freshwater and marine fish images used for fisheries monitoring and research. Labelled images and models can be used for object detection, image segmentation and computer vision objectives, automating fish identification and quantification processes.
+BRUVNet, a collaboration between [Microsoft](https://www.microsoft.com/en-us/ai/ai-for-earth) and the [Supervising Scientist](http://environment.gov.au/science/supervising-scientist), is an open-sourced dataset of freshwater and marine fish images used for fisheries monitoring and research. Labelled images and models can be used for object detection, image segmentation and computer vision objectives, automating fish identification and quantification processes.
 
 It aims to consolidate labelled fish datasets into one gold standard allowing users to subset and query easily. This will enable scientists, environmental managers and academics to research and develop their own custom models for fish species identification.
 
-Associated with BRUVNet is the workflow which enables the distribution of images for labelling to Citizen Scientists in a controlled and secured manner using Microsofts [VoTT (Visual Object Tagging Tool)](https://github.com/Microsoft/VoTT). 
+Associated with BRUVNet is the workflow which enables the distribution of images for labelling to multiple users in a controlled and secured manner using Microsofts [VoTT (Visual Object Tagging Tool)](https://github.com/Microsoft/VoTT). 
 
 BRUVNet holds image labelling challenges which calls on Citizen Scientists of the world to help build our dataset! If you'd like to contribute, access your discrete set of images to label by going to the image labelling challenge page on www.bruvnet.org
 
@@ -19,7 +19,9 @@ BRUV footage most commonly exists in continuous video format, therefore fisherie
 
 ### Remove empty frames from your footage 
 
-The extract-score-store jupyter notebook in the notebooks folder of this repository is used to loop through a folder of videos stored locally or in the cloud, extract frames at a desired frame/second rate, score against the KakaduFish compact model provided in the models folder, and return all the images that have fish present. This allows us to discard all the empty frames from a video and optimise the annotation process. Images are stored in Azure Blob containers which can be accessed by labelling tools using a SAS token. The current configuration creates new blob containers for each video to enable distribution of images across multiple users without overlap of labelling. 
+The extract-score-store jupyter notebook in the notebooks folder of this repository is used to loop through a folder of videos stored locally or in the cloud, extract frames at a desired frame/second rate, score against a compact or cloud hosted model, and return all the images that have fish present. This allows us to discard all the empty frames from a video and optimise the annotation process. Images are stored in Azure Blob containers which can be accessed by labelling tools using a SAS token. The current configuration creates new blob containers for each video to enable distribution of images across multiple users without overlap of labelling. 
+
+Alternatively, if you have already extracted fish images from video, they can be uploaded to an Azure Blob container through the Azure Portal or Azure Storage Explorer, ready for annotation and labelling.
 
 
 ## How to label images of fish for segmentation
@@ -47,7 +49,7 @@ The taxonomy tree below highlights an example of freshwater species currently in
 
 ## Label format and metadata
 
-Annotations and labels are in [COCO](https://cocodataset.org/#home) format. We provide a jupyter notebook in the notebooks folder, VOTT-COCO, to convert images labelled in VoTT to COCO format. Attributions to contributors and associated metadata detailing the imagery location, collection time, habitat and wether it's from freshwater or marine systems is allocated to allow subsetting of the dataset for model training.
+Annotations and labels are in [COCO](https://cocodataset.org/#home) format. We provide a jupyter notebook in the notebooks folder, VOTT-COCO, to convert images labelled in VoTT to BRUVNet-COCO format. Attributions to contributors and associated metadata detailing the imagery location, collection time, habitat and wether it's from freshwater or marine systems is allocated to allow subsetting of the dataset for model training.
 
 An example of metadata when uploading labelled datasets to BRUVNet Master. 
 
@@ -74,7 +76,7 @@ Follow the steps below to install this repository on your dekstop.
 * Install [Anaconda](https://repo.anaconda.com/archive/Anaconda3-2019.10-Windows-x86_64.exe)
   * Choose All Users
 * Install [Git Desktop](https://desktop.github.com/)
-* Open Git Desktop and clone https://github.com/ajansenn/KakaduFish.git
+* Open Git Desktop and clone https://github.com/ajansenn/BRUVNet.git
 * Open Anaconda Prompt, cd to folder with cloned repository and [create conda environment] using the code below(https://docs.microsoft.com/en-us/azure/machine-learning/service/how-to-configure-environment#local):
 ```
 conda env create -f environment.yml
