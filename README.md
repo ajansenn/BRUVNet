@@ -65,26 +65,8 @@ Use the PowerBI package provided in this repository to connect to the BRUVNet_Ma
 
 BRUVNet currently uses Azure Machine Learning service to train instance segmentation models with [Detectron2](https://github.com/facebookresearch/detectron2). 
 
-An object detection model trained using bounding box annotations of freshwater fish species is available. The model was trainied using [CustomVision.ai](https://www.customvision.ai/) and exported as a compact tensorflow file. 
+An object detection model trained using bounding box annotations of freshwater fish species is available. The model was trainied using [CustomVision.ai](https://www.customvision.ai/) and exported as a compact tensorflow file. Note. exporting as a compact model will result in a loss of performance in comparison to the cloud hosted model due to a reduce in size and condensing model weights. Where possible, use the cloud endpoint for best performance. 
 
-
-## Setting up your desktop
-
-Follow the steps below to install this repository on your dekstop.
-
-* Install [Azure Storage Explorer](https://azure.microsoft.com/en-us/features/storage-explorer/)
-* Install [Anaconda](https://repo.anaconda.com/archive/Anaconda3-2019.10-Windows-x86_64.exe)
-  * Choose All Users
-* Install [Git Desktop](https://desktop.github.com/)
-* Open Git Desktop and clone https://github.com/ajansenn/BRUVNet.git
-* Open Anaconda Prompt, cd to folder with cloned repository and [create conda environment] using the code below(https://docs.microsoft.com/en-us/azure/machine-learning/service/how-to-configure-environment#local):
-```
-conda env create -f environment.yml
-conda env list
-conda activate bruvnet
-conda install notebook ipykernel
-ipython kernel install --user
-```
 
 Create a free [Microsoft Azure account](https://azure.microsoft.com/en-au/free/search/?&OCID=AID2100005_SEM_XxwBIQAABlbEr6x_:20200826223928:s&msclkid=2994d79425221578b0a388d30fcfa145&ef_id=XxwBIQAABlbEr6x_:20200826223928:s&dclid=CjgKEAjwkJj6BRDA4aKNxJ-T7AgSJABGqdLcustSw9LZ5QLQ1dADrXJugi-_KX713AHwKyZ1fyX9zvD_BwE) to gain access to all the tooling required.  
 
@@ -110,8 +92,6 @@ If you already have a labelled dataset of fish images BRUVNet encourages collabo
 
 Steve van Bodegraven (Microsoft)
 
-Andrew Jansen (Supervising Scientist)
-
 Kris Bock (Microsoft)
 
 Varma Gadhiraju (Microsoft)
@@ -119,4 +99,6 @@ Varma Gadhiraju (Microsoft)
 Valeriia Savenko (Microsoft)
 
 Andrew Esparon (Supervising Scientist)
+
+Andrew Jansen (Supervising Scientist)
 
